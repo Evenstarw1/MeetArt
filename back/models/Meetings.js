@@ -7,7 +7,7 @@ const meetingsSchema = new Schema({
   date: Date,
   name: String,
   description: String,
-
+  category: {type: String, enum: ["Drawing", "Painting", "Photography", "Writing"]}
 }, {
   timestamps: {
     createdAt: 'created_at',
