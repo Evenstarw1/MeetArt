@@ -9,6 +9,8 @@ import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 import AuthService from './components/auth/AuthService';
 import Profile from './components/contents/Profile'
+import Meetings from './components/contents/Meetings'
+
 // import EditProfile from './components/contents/EditProfile'
 
 
@@ -57,8 +59,11 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
-            <Profile userInSession={this.state.loggedInUser}></Profile>
+            <Route exact path='/profile' render={() => <Profile userInSession={this.state.loggedInUser}/>}/>
+            {/* <Profile userInSession={this.state.loggedInUser}></Profile> */}
+            <Route exact path='/meetings' render={() => <Meetings/>}/>
           </header>
+
         </div>
       );
     } else {
@@ -69,7 +74,6 @@ class App extends Component {
             <Switch>
               <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
               <Route exact path='/login' render={() => <Login getUser={this.getTheUser}/>}/>
-
             </Switch>
           </header>
         </div>

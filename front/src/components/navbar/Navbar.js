@@ -24,6 +24,8 @@ class Navbar extends Component {
       return (
         <nav className="nav-style">
           <ul>
+            <li><Link to='/profile'>Profile</Link></li>
+            <li><Link to='/meetings'>Meetings</Link></li>
             <li><button onClick={this.handleLogout}>Logout</button></li>
           </ul>
 
