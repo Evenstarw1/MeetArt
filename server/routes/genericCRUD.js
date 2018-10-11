@@ -29,14 +29,12 @@ const simpleCrud = (Model, extensionFn) => {
     
     
     // CRUD: UPDATE
-    router.patch('/:id',(req,res,next) => {
+    router.post('/:id',(req,res,next) => {
         const {id} = req.params;
-        const object = _.pickBy(req.body, (e,k) => paths.includes(k));
-        const updates = _.pickBy(object, _.identity);
-        console.log(updates);
-        Model.findByIdAndUpdate(id, updates ,{new:true})
+        const {data} = req.body;
+        Model.findByIdAndUpdate(id, data ,{new:true})
             .then( obj => {
-                res.status(200).json({status:'updated',obj});
+                res.status(200).json(obj);
             })
             .catch(e => next(e))
     })
