@@ -60,7 +60,6 @@ class App extends Component {
           <header className="App-header">
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
             <Route exact path='/profile' render={() => <Profile userInSession={this.state.loggedInUser}/>}/>
-            {/* <Profile userInSession={this.state.loggedInUser}></Profile> */}
             <Route exact path='/meetings' render={() => <Meetings/>}/>
           </header>
 
