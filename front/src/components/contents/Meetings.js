@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import '../css/Map.css';
 
 
 
@@ -9,7 +10,7 @@ class Meetings extends Component {
         return (
             <div>
                 <h1>Mapa</h1>
-                <Map google={this.props.google} zoom={14}>
+                <Map className={"mapStyle"} google={this.props.google} zoom={14}>
 
                     <Marker onClick={this.onMarkerClick}
                         name={'Current location'} />

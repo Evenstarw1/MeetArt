@@ -57,11 +57,13 @@ class App extends Component {
     if(this.state.loggedInUser){
       return (
         <div className="App">
-          <header className="App-header">
+          <div className="App-header">
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
-            <Route exact path='/profile' render={() => <Profile userInSession={this.state.loggedInUser}/>}/>
-            <Route exact path='/meetings' render={() => <Meetings/>}/>
-          </header>
+            <Route exact path='/profile' render={() => 
+            <Profile userInSession={this.state.loggedInUser}/>}/>
+            <Route exact path='/meetings' render={() => 
+            <Meetings/>}/>
+          </div>
 
         </div>
       );

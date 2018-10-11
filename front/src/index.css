@@ -25,6 +25,11 @@ code {
 }
 
 .nav-style a {
-  color: white;
+  color: rgb(246, 0, 234);
   text-decoration: underline !important;
 }
+
+.mapStyle {
+  width: '200px';
+  height: '150px'; 
+  align-items: left;}
