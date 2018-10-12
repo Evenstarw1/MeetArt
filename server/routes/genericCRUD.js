@@ -13,7 +13,8 @@ const simpleCrud = (Model, extensionFn) => {
     }
     // CRUD: RETRIEVE
     router.get('/',(req,res,next) => {
-        Model.find()
+        const object = _.pickBy(req.body.data, (e,k) => paths.includes(k));
+        Model.find(object)
             .then( objList => res.status(200).json(objList))
             .catch(e => next(e))
     })

@@ -15,6 +15,7 @@ class Meetings extends Component {
     getAllMeetings = () => {
         axios.get(`http://localhost:3010/api/meetings/`)
             .then(responseFromApi => {
+                console.log(responseFromApi)
                 this.setState({
                     listOfMeetings: responseFromApi.data
                 })
@@ -52,12 +53,14 @@ class Meetings extends Component {
                     <Link to='/createmeeting'>Create a Meeting</Link>
                     <div>
                         <h3>Next meetings</h3>
-                        <div style={{ width: '60%', float: "left" }}>
+                        <div style={{ width: '60%', float: "right" }}>
                             {this.state.listOfMeetings.map((meeting, index) => {
                                 return (
                                     <div key={meeting._id}>
                                         <h3>{meeting.name}</h3>
+                                        <p>{meeting.place}</p>
                                         <p>{meeting.description} </p>
+                                        <p>{meeting.date}</p>
                                     </div>
                                 )
                             })
