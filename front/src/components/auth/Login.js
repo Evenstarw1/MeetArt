@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from './AuthService'
+import '../css/Auth.css';
 
 class Login extends Component {
   constructor(props) {
@@ -43,19 +44,23 @@ class Login extends Component {
 
     return (<div>
       <h3>Please, login to our site</h3>
+      <form className="px-4 py-3 loginBox" onSubmit={this.handleFormSubmit}>
+      <div className="">
 
-      <form onSubmit={this.handleFormSubmit}>
-        <fieldset>
-          <label>Username:</label>
-          <input type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
-        </fieldset>
-
-        <fieldset>
-          <label>Password:</label>
-          <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
-        </fieldset>
-
+        <div className="form-group">
+          <fieldset>
+            <label>Username:</label>
+            <input className="form-control" type="text" name="username" value={this.state.username} onChange={e => this.handleChange(e)} />
+          </fieldset>
+        </div>
+        <div className="form-group">
+          <fieldset>
+            <label>Password:</label>
+            <input className="form-control" type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
+          </fieldset>
+        </div>
         <input type="submit" value="Login" />
+      </div>
       </form>
 
       <h1>{this.state.error ? 'Error' : ''}</h1>

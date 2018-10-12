@@ -10,6 +10,7 @@ class Profile extends Component {
       return (
         <div>
           <h1>Hola</h1>
+          {/* <h2>Welcome, {this.state.loggedInUser.username}</h2> */}
           <EditProfile user= {this.props.userInSession} />
         </div>
     )

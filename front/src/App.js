@@ -8,8 +8,9 @@ import Navbar from './components/navbar/Navbar';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 import AuthService from './components/auth/AuthService';
-import Profile from './components/contents/Profile'
-import Meetings from './components/contents/Meetings'
+import Profile from './components/contents/Profile';
+import Meetings from './components/contents/Meetings';
+import CreateMeeting from './components/contents/CreateMeeting';
 
 // import EditProfile from './components/contents/EditProfile'
 
@@ -57,12 +58,18 @@ class App extends Component {
     if(this.state.loggedInUser){
       return (
         <div className="App">
-          <div className="App-header">
+          <header className="">
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+          </header>
+          <div>
+            <Switch>
             <Route exact path='/profile' render={() => 
             <Profile userInSession={this.state.loggedInUser}/>}/>
             <Route exact path='/meetings' render={() => 
             <Meetings/>}/>
+            <Route exact path='/createmeeting' render={() => 
+            <CreateMeeting/>}/>
+            </Switch>
           </div>
 
         </div>
@@ -70,7 +77,7 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <header className="App-header">
+          <header className="">
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
             <Switch>
               <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>

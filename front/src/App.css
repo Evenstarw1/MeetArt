@@ -39,8 +39,3 @@ fieldset {
     transform: rotate(360deg);
   }
 }
-
-.mapStyle {
-  width: '200px';
-  height: '150px'; 
-  align-items: left;}

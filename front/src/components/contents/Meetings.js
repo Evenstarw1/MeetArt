@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import '../css/Map.css';
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { Link } from 'react-router-dom';
 
 
 
 class Meetings extends Component {
 
     render() {
+        const style = {
+            width: '600px',
+            height: '100%',
+            marginRight: '750px',
+        }
         return (
             <div>
-                <h1>Mapa</h1>
-                <Map className={"mapStyle"} google={this.props.google} zoom={14}>
-
+                <h1>Meetings</h1>
+                <hr/>
+                <div >
+                <Map style = {style} google={this.props.google} zoom={14} initialCenter = {{ lat: 40.4169473, lng: -3.7057172 }}>
                     <Marker onClick={this.onMarkerClick}
                         name={'Current location'} />
 
@@ -21,6 +28,11 @@ class Meetings extends Component {
                         </div> */}
                     </InfoWindow>
                 </Map>
+                </div>
+                <div>
+                    <Link to='/createmeeting'>Create a Meeting</Link>
+                    {/* Lista Quedadas */}
+                </div>
             </div>
         )
     }
