@@ -33,3 +33,7 @@ code {
   width: '200px';
   height: '150px'; 
   align-items: left;}
+
+.map-container > div {
+  width: 40% !important;
+}

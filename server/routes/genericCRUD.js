@@ -20,7 +20,7 @@ const simpleCrud = (Model, extensionFn) => {
     
     // CRUD: CREATE
     router.post('/',(req,res,next) => {
-        const object = _.pickBy(req.body, (e,k) => paths.includes(k));
+        const object = _.pickBy(req.body.data, (e,k) => paths.includes(k));
         Model.create(object)
             .then( obj => res.status(200).json(obj))
             .catch(e => next(e))

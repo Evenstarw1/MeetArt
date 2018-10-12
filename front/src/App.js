@@ -68,7 +68,7 @@ class App extends Component {
             <Route exact path='/meetings' render={() => 
             <Meetings/>}/>
             <Route exact path='/createmeeting' render={() => 
-            <CreateMeeting/>}/>
+            <CreateMeeting/> } />
             </Switch>
           </div>
 
