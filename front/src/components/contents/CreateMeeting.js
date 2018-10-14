@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import axios from 'axios';
-import Meetings from './Meetings';
 import '../css/Map.css';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
@@ -16,6 +15,7 @@ class CreateMeetings extends Component {
         redirect: false
     }
   }
+  
 
   componentDidMount = () => {
     this.setState({meetings: this.props.meetings})
@@ -37,6 +37,7 @@ class CreateMeetings extends Component {
     meetings[type] = event.target.value;
     this.setState({meetings})
   }
+
 
   render() {
       if(this.state.redirect)return <Redirect to='/meetings'/>

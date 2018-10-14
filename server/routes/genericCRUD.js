@@ -59,6 +59,9 @@ const simpleCrud = (Model, extensionFn) => {
     })
 
     return router;
+
+
+
 }
 
 

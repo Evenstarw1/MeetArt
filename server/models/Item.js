@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const itemSchema = new Schema({
+  username: String,
   title: String,
   image: String,
   description: String,
