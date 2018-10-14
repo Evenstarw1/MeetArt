@@ -15,15 +15,15 @@ export default class UpItem {
 
   addPicture(image, title, description, category ) {
     const formData = new FormData();
-    formData.append("image", image)
+    formData.append("item", image)
     formData.append("title", title)
     formData.append("description", description)
     formData.append("category", category)
 
-    console.log('DEBUG formData', formData.get("image"));
+    console.log('DEBUG formData');
     
     return this.service
-      .post('new', formData, {
+      .post('/new', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

@@ -11,7 +11,8 @@ const userSchema = new Schema({
   role: {type: String, enum: ["Illustrator", "Writer", "Photographer"]},
   status: { type: Boolean, default: false },
   confirmationCode: { type: String, unique: true},
-  gender: {type: String, enum: ["female", "male", "robot"]}
+  gender: {type: String, enum: ["female", "male", "robot"]},
+  items: [],
 
 }, {
   timestamps: {
