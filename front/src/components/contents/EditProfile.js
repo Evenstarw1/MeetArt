@@ -1,41 +1,58 @@
 import React from 'react';
 import { Redirect } from "react-router-dom";
 import axios from 'axios';
+import UpItem from './Gallery/UpItem'
+
 
 export default class EditProfile extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             user: {}
         }
-      }
+        this.service = new UpItem();
+    }
 
-      componentDidMount = () => {
-          console.log(this.props.user);
-          this.setState({user: this.props.user})
-      }
+    componentDidMount = () => {
+        console.log(this.props.user);
+        this.setState({ user: this.props.user })
+    }
 
-      handleFormSubmit=(event)=>{
-        const data = this.state.user;
+    handleFormSubmit = (event) => {
         event.preventDefault();
-        axios.post(`http://localhost:3010/api/user/${this.state.user._id}`, {data})
-        .then(res => {
-          console.log(res)
-          return <Redirect to="/Profile"></Redirect>
-        })
-        .catch(e=>console.log("Error",e))
-      }
+        const {user, image} = this.state;
 
-      handleChangeProf = (event, type) => {  
-          let user = Object.assign({}, this.state.user)
-          user[type] = event.target.value;
-          this.setState({user})
-        }
-      
-    
+        const formData = new FormData();
+        formData.append("image", image);
+        formData.append("username", user.username);
+        formData.append("description", user.description);
+        formData.append("location", user.location);
+        formData.append("gender", user.gender);
+        formData.append("role", user.role);
+
+       return axios.post(`http://localhost:3010/api/user/${this.state.user._id}`, formData, { 
+            headers: {
+                'Conent-Type': 'multipart/form-data',
+            },
+            withCredentials: true
+        })
+            .then(res => {
+                console.log(res)
+                return <Redirect to="/Profile"></Redirect>
+            })
+            .catch(e => console.log("Error", e))
+    }
+
+    handleChangeProf = (event, type) => {
+        let user = Object.assign({}, this.state.user)
+        user[type] = event.target.value;
+        this.setState({ user })
+    }
+
+
 
     render() {
-        let {user} = this.state;
+        let { user } = this.state;
         return (
             <div>
                 <hr />
@@ -59,9 +76,10 @@ export default class EditProfile extends React.Component {
                         <option value="Writer">Writer</option>
                         <option value="Photographer">Photographer</option>
                     </select>
-
-                <button onClick={this.editProfile}>Submit</button>
-            </form>
+                    <label>Image</label>
+                    <input type="file" name='image' placeholder='Your profile pic' onChange={e => this.setState({image: e.target.files[0]})} />
+                    <button onClick={this.editProfile}>Submit</button>
+                </form>
             </div>
         )
     }

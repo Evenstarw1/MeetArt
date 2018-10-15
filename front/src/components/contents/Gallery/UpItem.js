@@ -30,4 +30,5 @@ export default class UpItem {
       })
       .then(res => res.data)
   }
+  
 }

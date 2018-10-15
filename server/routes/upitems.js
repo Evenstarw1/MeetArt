@@ -6,7 +6,7 @@ const uploadCloud = require('../configs/cloudinary.js');
 
 router.get('/', (req, res, next) => {
     return Item.find({username: req.user.username})
-    .then(data => {console.log(data);
+    .then(data => {/* console.log(data); */
     return res.status(200).json(data)})
     .catch(err => next(err));
 })

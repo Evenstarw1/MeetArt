@@ -21,7 +21,6 @@ export default class Gallery extends Component {
     }
 
     render() {
-        let gallery = '';
         if (this.state.listOfItems) {
             return this.state.listOfItems.map((items, index) => {
                 return (
