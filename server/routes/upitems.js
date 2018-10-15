@@ -4,8 +4,15 @@ const User = require('../models/User');
 const Item = require('../models/Item');
 const uploadCloud = require('../configs/cloudinary.js');
 
+router.get('/', (req, res, next) => {
+    return Item.find({username: req.user.username})
+    .then(data => {console.log(data);
+    return res.status(200).json(data)})
+    .catch(err => next(err));
+})
+
 //CREATE NEW ITEM
-router.post('/new', uploadCloud.single('item'), (req, res, next) => {
+router.post('/', uploadCloud.single('item'), (req, res, next) => {
     console.log("New item");
     
     let { title, description, category } = req.body;
@@ -25,5 +32,7 @@ router.post('/new', uploadCloud.single('item'), (req, res, next) => {
             .then((user) => { res.json(user) })
         }).catch(e => next(e))
 })
+
+
 
 module.exports = router;

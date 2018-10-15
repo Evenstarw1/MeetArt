@@ -4,6 +4,7 @@ import EditProfile from './EditProfile';
 import Gallery from './Gallery/Gallery';
 import UploadItem from './Gallery/UploadItem';
 
+
 class Profile extends Component {
 
   render() {
@@ -15,7 +16,7 @@ class Profile extends Component {
           <hr/>
           <h2>Upload</h2>
           <UploadItem/>
-          {/* <Gallery/>  */}
+          <Gallery/>
         </div>
     )
   }

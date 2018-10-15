@@ -23,7 +23,7 @@ export default class UpItem {
     console.log('DEBUG formData');
     
     return this.service
-      .post('/new', formData, {
+      .post('/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

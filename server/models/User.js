@@ -9,8 +9,6 @@ const userSchema = new Schema({
   location: String,
   email: String,
   role: {type: String, enum: ["Illustrator", "Writer", "Photographer"]},
-  status: { type: Boolean, default: false },
-  confirmationCode: { type: String, unique: true},
   gender: {type: String, enum: ["female", "male", "robot"]},
   items: [],
 
