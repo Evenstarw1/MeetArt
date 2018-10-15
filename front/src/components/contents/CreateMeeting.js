@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import axios from 'axios';
 import '../css/Map.css';
 import Map from './Map/map.js';
-import GoogleMap from './GoogleMap.js';
 
 
 export default class CreateMeetings extends React.Component {
