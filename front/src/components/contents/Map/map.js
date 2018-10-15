@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { render } from "react-router-dom";
 
 class Map extends Component {
   constructor(props) {
@@ -8,10 +7,10 @@ class Map extends Component {
   }
 
   onScriptLoad() {
-    const map = new window.google.maps.Map(
+    this.map = new window.google.maps.Map(
       document.getElementById(this.props.id),
       this.props.options);
-    this.props.onMapLoad(map)
+    this.props.onMapLoad(this.map);
   }
 
   componentDidMount() {
@@ -28,6 +27,7 @@ class Map extends Component {
       })
     } else {
       this.onScriptLoad()
+      console.log(this.map);
     }
   }
 

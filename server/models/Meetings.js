@@ -14,6 +14,7 @@ const meetingsSchema = new Schema({
     updatedAt: 'updated_at'
   }
 });
+meetingsSchema.index({ location: '2dsphere' });
 
 const Meetings = mongoose.model('Meetings', meetingsSchema);
 module.exports = Meetings;
