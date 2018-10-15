@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import axios from 'axios';
 import '../css/Map.css';
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import Map from './Map/map.js';
 
 
 
-class CreateMeetings extends Component {
+
+export default class CreateMeetings extends React.Component {
 
   constructor(props){
     super(props);
@@ -41,10 +42,6 @@ class CreateMeetings extends Component {
 
   render() {
       if(this.state.redirect)return <Redirect to='/meetings'/>
-    const style = {
-        width: '600px',
-        height: '100%'
-    }
 
     return (
       <div>
@@ -71,23 +68,17 @@ class CreateMeetings extends Component {
         </div>
 
         <div class="map-container">
-                <Map style = {style} google={this.props.google} zoom={14} initialCenter = {{ lat: 40.4169473, lng: -3.7057172 }}>
-                    <Marker onClick={this.onMarkerClick}
-                        name={'Current location'} />
-
-                    <InfoWindow onClose={this.onInfoWindowClose}>
-                        {/* <div>
-                            <h1>{this.state.selectedPlace.name}</h1>
-                        </div> */}
-                    </InfoWindow>
-                </Map>
+        <Map id="myMap" options={{center: { lat: 40.4169473, lng: -3.7057172  }, zoom: 15}}
+        onMapLoad={map => {
+          var marker = new window.google.maps.Marker({
+            position: { lat: 40.4169473, lng: -3.7057172 },
+            map: map,
+            title: 'Hello Madrid!'
+          });
+        }}/>
         </div>
 
       </div>
     )
   }
 }
-
-export default GoogleApiWrapper({
-    apiKey: ("AIzaSyCkhuP8ROCRjv9n-f_LuZtylrTZY2yJTP0")
-  })(CreateMeetings)
