@@ -1,4 +1,4 @@
-exports.STYLES = [
+[
     {
         "featureType": "landscape",
         "elementType": "all",
@@ -22,7 +22,7 @@ exports.STYLES = [
         "elementType": "all",
         "stylers": [
             {
-                "hue": "#FF00AF"
+                "hue": "#ff00af"
             },
             {
                 "saturation": 32.599999999999994
@@ -32,6 +32,21 @@ exports.STYLES = [
             },
             {
                 "gamma": 1
+            },
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "saturation": "40"
             }
         ]
     },

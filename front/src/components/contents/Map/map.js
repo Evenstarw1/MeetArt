@@ -1,16 +1,12 @@
 import React from "react";
 import { compose, withProps } from "recompose";
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker
-} from "react-google-maps";
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import mapcolor from './mapcolor.json';
 
 const MyMapComponent = compose(
   withProps({
     googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyCtFGWWXJyAzch--tvKAt82xqXSj7W383M",
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyCkhuP8ROCRjv9n-f_LuZtylrTZY2yJTP0",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />
@@ -20,7 +16,7 @@ const MyMapComponent = compose(
 )(props => {
   let markers;
   let marker = '';
-  console.log(props.marker);
+
 
   if(props.marker) {
     marker = <Marker position={{ lat: props.marker[0].lat, lng: props.marker[0].lng }} />
@@ -31,11 +27,12 @@ const MyMapComponent = compose(
       <Marker key={i} position={{ lat: e.lat, lng: e.lng }} />
     ));
   }
-
+  console.log(mapcolor)
   return (
     <GoogleMap
       defaultZoom={15}
       defaultCenter={{ lat: 40.4169473, lng: -3.7057172 }}
+      defaultOptions={{ styles: mapcolor }}
       onClick={e => props.onMarkerClick(e)}
     >
       {markers}

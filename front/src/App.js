@@ -11,7 +11,7 @@ import AuthService from './components/auth/AuthService';
 import Profile from './components/contents/Profile';
 import Meetings from './components/contents/Meetings/Meetings';
 import CreateMeeting from './components/contents/Meetings/CreateMeeting';
-
+import UploadItem from './components/contents/Gallery/UploadItem';
 // import EditProfile from './components/contents/EditProfile'
 
 
@@ -69,6 +69,8 @@ class App extends Component {
             <Meetings/>}/>
             <Route exact path='/createmeeting' render={() => 
             <CreateMeeting/> } />
+            <Route exact path='/submitart' render={() => 
+            <UploadItem/> } />
             </Switch>
           </div>
 

@@ -56,12 +56,14 @@ export default class EditProfile extends React.Component {
         return (
             <div>
                 <hr />
-                <h1>Edit Profile</h1>
+                <h1>Edit your Profile</h1>
+                <p>Your information will appear on your public profile.</p>
                 <form onSubmit={this.handleFormSubmit}>
                     <label>Username:</label>
                     <input type="text" name="username" value={user.username} onChange={e => this.handleChangeProf(e, "username")} />
                     <label>Description:</label>
                     <textarea name="description" value={user.description} onChange={e => this.handleChangeProf(e, "description")} />
+                    <p>Use your descriptiono to introduce yourself to the community. </p>
                     <label>Location:</label>
                     <input type="text" name="location" value={user.location} onChange={e => this.handleChangeProf(e, "location")} />
                     <label>Gender:</label>
