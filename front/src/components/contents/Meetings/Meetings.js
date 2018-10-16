@@ -27,14 +27,17 @@ class Meetings extends Component {
 
 
     render() {
-        
+
         return (
             <div>
                 <h1>Meetings</h1>
                 <hr />
                 <div className="map-container">
-                <Map id="myMap"/>
-                
+                        {this.state.listOfMeetings.length > 0 ? (
+                            <Map id="myMap" meetings={this.state.listOfMeetings} />
+                        ) : (
+                        ""
+                        )}
                 </div>
                 <div>
                     <Link to='/createmeeting'>Create a Meeting</Link>

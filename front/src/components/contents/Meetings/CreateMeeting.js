@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from "react-router-dom";
 import axios from 'axios';
 import Map from '../Map/map.js';
-
+import mapcolor from '../Map/mapcolor';
 
 export default class CreateMeetings extends React.Component {
 
@@ -21,6 +21,8 @@ export default class CreateMeetings extends React.Component {
 
   handleFormSubmit = (event) => {
     const data = this.state.meetings;
+    data['lat'] = this.state.lat;
+    data['lng'] = this.state.lng;
     event.preventDefault();
     axios.post(`http://localhost:3010/api/meetings/`, { data })
       .then(res => {
@@ -36,8 +38,8 @@ export default class CreateMeetings extends React.Component {
     this.setState({ meetings })
   }
 
-  handleClickMap(event) {
-    console.log(event.latLng.lat(), event.latLng.lng())
+  handleClickMap = (event) => {
+    this.setState({lat: event.latLng.lat(), lng: event.latLng.lng()})
   }
 
 
