@@ -9,8 +9,8 @@ import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 import AuthService from './components/auth/AuthService';
 import Profile from './components/contents/Profile';
-import Meetings from './components/contents/Meetings';
-import CreateMeeting from './components/contents/CreateMeeting';
+import Meetings from './components/contents/Meetings/Meetings';
+import CreateMeeting from './components/contents/Meetings/CreateMeeting';
 
 // import EditProfile from './components/contents/EditProfile'
 

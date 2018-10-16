@@ -1,40 +1,56 @@
-import React, { Component } from 'react';
+import React from "react"
+import { compose, withProps } from "recompose"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
-class Map extends Component {
-  constructor(props) {
-    super(props);
-    this.onScriptLoad = this.onScriptLoad.bind(this)
+const MyMapComponent = compose(
+  withProps({
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCkhuP8ROCRjv9n-f_LuZtylrTZY2yJTP0",
+    loadingElement: <div style={{ height: `100%` }} />,
+    containerElement: <div style={{ height: `400px` }} />,
+    mapElement: <div style={{ height: `100%` }} />,
+  }),
+  withScriptjs,
+  withGoogleMap
+)((props) => {
+
+  let markers;
+
+  if (props.markers) {
+    markers = props.markers.map((e, i) => <Marker key={i} position={{ lat: e.lat, lng: e.lng }} />)
   }
 
-  onScriptLoad() {
-    this.map = new window.google.maps.Map(
-      document.getElementById(this.props.id),
-      this.props.options);
-    this.props.onMapLoad(this.map);
+  return (<GoogleMap
+    defaultZoom={15}
+    defaultCenter={{lat: 40.416856345761985 , lng: -3.703494483007944}}
+    onClick={e => props.onMarkerClick(e)}
+  >
+    {markers}
+  </GoogleMap>)
+}
+)
+
+class Map extends React.PureComponent {
+  state = {
+
   }
 
   componentDidMount() {
-    if (!window.google) {
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.src = `https://maps.google.com/maps/api/js?key=AIzaSyCkhuP8ROCRjv9n-f_LuZtylrTZY2yJTP0`;
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-      // Below is important. 
-      //We cannot access google.maps until it's finished loading
-      s.addEventListener('load', e => {
-        this.onScriptLoad()
-      })
-    } else {
-      this.onScriptLoad()
-      console.log(this.map);
-    }
+  }
+
+
+
+  handleMarkerClick = (e) => {
+    this.setState({ marker: [{ lat: e.latLng.lat(), lng: e.latLng.lng() }] })
+    this.props.handleClick(e);
   }
 
   render() {
     return (
-      <div style={{ width: 500, height: 500 }} id={this.props.id} />
-    );
+      <MyMapComponent
+        onMarkerClick={this.handleMarkerClick}
+        markers={this.state.marker}
+      />
+    )
   }
 }
 

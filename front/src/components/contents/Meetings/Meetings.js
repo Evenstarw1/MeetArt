@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import '../css/Map.css';
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import Map from '../Map/map.js';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -28,28 +27,16 @@ class Meetings extends Component {
 
 
     render() {
-        const style = {
-            width: '600px',
-            height: '100%',/* 
-            marginRight: '750px' */
-        }
+        
         return (
             <div>
                 <h1>Meetings</h1>
                 <hr />
                 <div className="map-container">
-                    <Map style={style} google={this.props.google} zoom={14} initialCenter={{ lat: 40.4169473, lng: -3.7057172 }}>
-                        <Marker onClick={this.onMarkerClick}
-                            name={'Current location'} />
-
-                        <InfoWindow onClose={this.onInfoWindowClose}>
-                            {/* <div>
-                            <h1>{this.state.selectedPlace.name}</h1>
-                        </div> */}
-                        </InfoWindow>
-                    </Map>
+                <Map id="myMap"/>
+                
                 </div>
-                <div style={{ "zindex": "10" }}>
+                <div>
                     <Link to='/createmeeting'>Create a Meeting</Link>
                     <div>
                         <h3>Next meetings</h3>
@@ -61,6 +48,7 @@ class Meetings extends Component {
                                         <p>{meeting.place}</p>
                                         <p>{meeting.description} </p>
                                         <p>{meeting.date}</p>
+                                        <p>{meeting.times}</p>
                                     </div>
                                 )
                             })
@@ -73,6 +61,4 @@ class Meetings extends Component {
     }
 }
 
-export default GoogleApiWrapper({
-    apiKey: ("AIzaSyCkhuP8ROCRjv9n-f_LuZtylrTZY2yJTP0")
-})(Meetings)
+export default Meetings;

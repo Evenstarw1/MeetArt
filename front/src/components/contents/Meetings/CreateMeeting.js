@@ -1,8 +1,7 @@
 import React from 'react';
 import { Redirect } from "react-router-dom";
 import axios from 'axios';
-import '../css/Map.css';
-import Map from './Map/map.js';
+import Map from '../Map/map.js';
 
 
 export default class CreateMeetings extends React.Component {
@@ -37,6 +36,10 @@ export default class CreateMeetings extends React.Component {
     this.setState({ meetings })
   }
 
+  handleClickMap(event) {
+    console.log(event.latLng.lat(), event.latLng.lng())
+  }
+
 
   render() {
     if (this.state.redirect) return <Redirect to='/meetings' />
@@ -51,14 +54,11 @@ export default class CreateMeetings extends React.Component {
             <label>Description:</label>
             <textarea name="description" onChange={e => this.handleAddMeet(e, "description")} />
             <label>Place</label>
-            <input type="text" name="name" onChange={e => this.handleAddMeet(e, "place")} />
-            
-            <label>Location:</label>
-            <input id="lat-pos" type="hidden" name="lat" placeholder="Latitude" />
-            <input id="lng-pos" type="hidden" name="lng" placeholder="Longitude" />
-            
+            <input type="text" name="name" onChange={e => this.handleAddMeet(e, "place")} />           
             <label>Date:</label>
             <input type="date" name="date" onChange={e => this.handleAddMeet(e, "date")} />
+            <label>Time:</label>
+            <input type="time" name="time" onChange={e => this.handleAddMeet(e, "time")} />
             <label>Category:</label>
             <select name="category" onChange={e => this.handleAddMeet(e, "category")}>
               <option value="Drawing">Drawing</option>
@@ -70,16 +70,8 @@ export default class CreateMeetings extends React.Component {
           </form>
         </div>
 
-        <div className="map-container">
-          <Map id="myMap" options={{ center: { lat: 40.4169473, lng: -3.7057172 }, zoom: 15 }}
-            onMapLoad={map => {
-              let marker = new window.google.maps.Marker({
-                position: {},
-                map: map,
-              });
-              
-            }} 
-            />
+        <div className="map">
+          <Map id="myMap" handleClick={this.handleClickMap}/>
         </div>
 
       </div>
