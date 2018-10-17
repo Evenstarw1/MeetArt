@@ -11,6 +11,13 @@ h3 {
   -webkit-text-fill-color: transparent;
 }
 
+.btn-edit{
+    padding: 10px 50px;
+    display: flex;
+    margin: 0 100px;
+    font-size: 16px;
+}
+
 
 .btn-submit{
     padding: 10px 100px;
@@ -28,14 +35,54 @@ a:hover{
     margin-left: 6px;
 }
 
+.img-button-pencil{
+    height: 24px;
+    margin-left: 6px;
+}
+
 .profile-box{
     border-radius: 20px;
-    border: 0.5px solid rgb(189, 189, 189);
+    border: 0.5px solid rgb(214, 214, 214);
     margin: 10px 40px;
     box-shadow: 3px 3px 6px rgb(182, 181, 181);
+    padding: 25px 60px;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.profile-info{
+    display: flex;
+    flex-direction: row;
+}
+
+.img-box{
+    justify-content: center;
 
 }
+
+.txt-box{
+flex-direction: column;
+margin-left: 50px;
+margin-right: 120px;
+text-align: left;
+}
+
 .img-profile {
     border-radius: 50%;
-    height: 180px;
+    height: 220px;
+}
+
+h5 {
+    font-size: 30px;
+    background: -webkit-linear-gradient(#f15f79, #b24592);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    font-weight: bold;
+}
+
+h6 {
+    font-weight: bold;
+    font-size: 18px;
 }
