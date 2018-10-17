@@ -1,5 +1,6 @@
 const express = require('express');
 const _ = require('lodash');
+const User = require('../models/User')
 
 const uploadCloud = require('../configs/cloudinary')
 
@@ -19,6 +20,12 @@ const simpleCrud = (Model, extensionFn) => {
         Model.find(object)
             .then( objList => res.status(200).json(objList))
             .catch(e => next(e))
+    })
+
+    router.get('/profile', (req,res,next) => {
+        User.findById(req.user._id)
+        .then( user => res.status(200).json(user))
+        .catch(e => next(e));
     })
     
     // CRUD: CREATE

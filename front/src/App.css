@@ -19,11 +19,11 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ffffff;
 }
 
 a {
-  color: rgb(228, 35, 186);
+  color: rgb(255, 255, 255);
   cursor: pointer;
 }
 
@@ -38,4 +38,27 @@ fieldset {
   to {
     transform: rotate(360deg);
   }
+}
+
+.btn {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 10px 40px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 15px;
+  font-weight: bold;
+ }
+
+.btn-grad {
+  background-image: linear-gradient(to right, #b24592 0%, #f15f79 51%, #B24592 100%)
+}
+.btn-grad:hover { 
+  background-position: right center; 
+  color: white;
+  font-weight: bold;
 }

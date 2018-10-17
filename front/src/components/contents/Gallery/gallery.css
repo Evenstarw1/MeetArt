@@ -1,0 +1,46 @@
+
+.gallery-group {
+  justify-content: center;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.gallery-container {
+  margin: 15px;
+}
+
+.card-img-height {
+  height: 10rem;
+  object-fit: cover
+}
+
+.card-img-height:hover {
+  filter: blur(4px);
+} 
+
+.card-style {
+  width: 18rem;
+  box-shadow: 3px 3px 6px rgb(182, 181, 181);
+}
+
+.btn {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 10px 40px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 15px;
+ }
+
+.btn-grad {
+  background-image: linear-gradient(to right, #b24592 0%, #f15f79 51%, #B24592 100%)
+}
+.btn-grad:hover { 
+  background-position: right center; 
+}
