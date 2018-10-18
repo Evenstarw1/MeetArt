@@ -1,0 +1,69 @@
+h3 {
+    font-size: 60px;
+    background: -webkit-linear-gradient(#f15f79, #b24592);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+h5 {
+    font-size: 30px;
+    background: -webkit-linear-gradient(#f15f79, #b24592);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    font-weight: bold;
+}
+
+.map-meetings-group{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.map-list {
+    width: 60%;
+}
+
+.map-meeting-list {
+    height: 800px;
+}
+
+.button-meetings{
+    margin: 30px;
+}
+
+.meetings-list{
+    margin-left: 60px;
+    margin-right: 40px;
+    margin-top: -60px;
+}
+
+.each-meeting{
+    border: 5px solid transparent;
+    border-image: linear-gradient(to bottom right, #f15f79 0%, #b24592 25%, #f15f79 50%, #b24592 75%, #fd1892 100%);
+    border-image-slice: 1;
+    margin: 20px auto;
+    width: 400px;
+    padding: 5px;
+}
+
+.each-meeting h6{
+    font-size: 20px;
+}
+
+.each-meeting p{
+    font-size: 14px;
+}
+
+.meeting-form{
+    margin-left: 60px;
+    margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.label-text {
+    text-align: left;
+    font-size: 18px;
+  }
+  

@@ -8,6 +8,7 @@ import './Gallery/gallery.css'
 import './profile.css';
 
 
+
 class Profile extends Component {
 
   render() {

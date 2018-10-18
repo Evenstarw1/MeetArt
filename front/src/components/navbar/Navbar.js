@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from '../auth/AuthService';
+import './navbar.css';
 
 class Navbar extends Component {
   constructor(props) {
@@ -22,13 +23,16 @@ class Navbar extends Component {
     if (this.state.loggedInUser) {
       return (
         <div>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <img className="logo-nav" src="/images/meetart_logo.png" alt=""/>
+            <div className="nav-link-direction">
               <ul className="navbar-nav mr-auto">
-                <li className="nav-item active"><Link className="nav-link" to='/profile'>Profile</Link></li>
-                <li className="nav-item active"><Link className="nav-link" to='/meetings'>Meetings</Link></li>
-                <li className="nav-item active"><button className="btn btn-danger" onClick={this.handleLogout}>Logout</button></li>
+                <li className="nav-item active li-white"><Link className="nav-link-white" to='/profile'>Profile</Link></li>
+                <li className="nav-item active li-white"><Link className="nav-link-white" to='/meetings'>Meetings</Link></li>
+                <li className=""><button className="btn-navbar btn-grad-navbar" onClick={this.handleLogout}>Logout</button></li>
               </ul>
+              </div>
               </div>
           </nav>
         </div>
@@ -36,11 +40,12 @@ class Navbar extends Component {
     } else {
       return (
         <div>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <img className="logo-nav" src="/images/meetart_logo.png" alt=""/>
               <ul className="navbar-nav mr-auto">
-                <li className="nav-item active"><Link className="nav-link" to='/signup'>Signup</Link></li>
-                <li className="nav-item active"><Link className="nav-link" to='/login'>Login</Link></li>
+                <li className="nav-item active"><Link className="nav-link-white" to='/signup'>Signup</Link></li>
+                <li className="nav-item active"><Link className="nav-link-white" to='/login'>Login</Link></li>
               </ul>
               </div>
           </nav>   

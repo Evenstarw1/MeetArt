@@ -44,3 +44,23 @@
 .btn-grad:hover { 
   background-position: right center; 
 }
+
+.form-box-upload {
+  margin-top: 30px;
+}
+
+.form-upload {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.label-text {
+  text-align: left;
+  font-size: 18px;
+}
+
+.input-display {
+  display: flex;
+  justify-content: flex-start;
+}

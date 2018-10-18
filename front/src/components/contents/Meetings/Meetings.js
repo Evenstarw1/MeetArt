@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Map from '../Map/map.js';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './meetings.css';
 
 
 
@@ -30,36 +31,41 @@ class Meetings extends Component {
 
         return (
             <div>
-                <h1>Meetings</h1>
+                <h3>Meetings</h3>
                 <hr />
-                <div className="map-container">
-                        {this.state.listOfMeetings.length > 0 ? (
-                            <Map id="myMap" meetings={this.state.listOfMeetings} />
-                        ) : (
-                        ""
+                <div className="button-meetings">
+                <button className="btn btn-grad btn-edit"><Link to='/createmeeting'>Create a Meeting</Link></button>
+                </div>
+
+
+            <div className="map-meetings-group">
+
+                <div className="map-list">
+                    {this.state.listOfMeetings.length > 0 ? (
+                        <Map className="map-meeting-list" id="myMap" meetings={this.state.listOfMeetings} />
+                    ) : (
+                            ""
                         )}
                 </div>
-                <div>
-                    <Link to='/createmeeting'>Create a Meeting</Link>
-                    <div>
-                        <h3>Next meetings</h3>
-                        <div style={{ width: '60%', float: "right" }}>
+
+                <div className="meetings-list">
+                        <h5>Next meetings</h5>
+                        <div>
                             {this.state.listOfMeetings.map((meeting, index) => {
                                 return (
-                                    <div key={meeting._id}>
-                                        <h3>{meeting.name}</h3>
-                                        <p>{meeting.place}</p>
+                                    <div className="each-meeting" key={meeting._id}>
+                                        <h6>{meeting.name}</h6>
+                                        <p><b>Where?</b> {meeting.place}</p>
+                                        <p><b>When?</b> {meeting.date} at {meeting.time}h</p>
                                         <p>{meeting.description} </p>
-                                        <p>{meeting.date}</p>
-                                        <p>{meeting.times}</p>
                                     </div>
                                 )
                             })
                             }
                         </div>
-                    </div>
-                </div>
-            </div>
+                </div>    
+        </div>
+        </div>
         )
     }
 }

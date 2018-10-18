@@ -38,7 +38,7 @@ export default class CreateMeetings extends React.Component {
   }
 
   handleClickMap = (event) => {
-    this.setState({lat: event.latLng.lat(), lng: event.latLng.lng()})
+    this.setState({ lat: event.latLng.lat(), lng: event.latLng.lng() })
   }
 
 
@@ -47,34 +47,48 @@ export default class CreateMeetings extends React.Component {
 
     return (
       <div>
-        <div>
-          <h2>Create your Meeting</h2>
-          <form onSubmit={this.handleFormSubmit}>
-            <label>Name</label>
-            <input type="text" name="name" onChange={e => this.handleAddMeet(e, "name")} />
-            <label>Description:</label>
-            <textarea name="description" onChange={e => this.handleAddMeet(e, "description")} />
-            <label>Place</label>
-            <input type="text" name="name" onChange={e => this.handleAddMeet(e, "place")} />           
-            <label>Date:</label>
-            <input type="date" name="date" onChange={e => this.handleAddMeet(e, "date")} />
-            <label>Time:</label>
-            <input type="time" name="time" onChange={e => this.handleAddMeet(e, "time")} />
-            <label>Category:</label>
-            <select name="category" onChange={e => this.handleAddMeet(e, "category")}>
-              <option value="Drawing">Drawing</option>
-              <option value="Painting">Painting</option>
-              <option value="Photography">Photography</option>
-              <option value="Writing">Writing</option>
-            </select>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
+          <h3>Create your Meeting</h3>
+          <hr />
+          <div className="map-meetings-group">
+            <div className="map-list">
+              <Map className="map-meeting-list" id="myMap" handleClick={this.handleClickMap} />
+            </div>
 
-        <div className="map">
-          <Map id="myMap" handleClick={this.handleClickMap}/>
-        </div>
-
+            <div className="meeting-form">
+            <form onSubmit={this.handleFormSubmit}>
+            <div className="field">
+              <label className="label label-text">Name:</label>
+              <input className="input" type="text" name="name" onChange={e => this.handleAddMeet(e, "name")} />
+              </div>
+              <div className="field">
+              <label className="label label-text">Description:</label>
+              <textarea className="textarea" name="description" onChange={e => this.handleAddMeet(e, "description")} />
+              </div>
+              <div className="field">
+              <label className="label label-text">Place:</label>
+              <input className="input" type="text" name="name" onChange={e => this.handleAddMeet(e, "place")} />
+              </div>
+              <label className="label label-text">Date:</label>
+              <input type="date" name="date" onChange={e => this.handleAddMeet(e, "date")} />
+              <label className="label label-text">Time:</label>
+              <input type="time" name="time" onChange={e => this.handleAddMeet(e, "time")} />
+              <div className="field">
+              <label className="label label-text">Category:</label>
+              <div class="control is-center">
+              <div class="select">
+              <select name="category" onChange={e => this.handleAddMeet(e, "category")}>
+                <option value="Drawing">Drawing</option>
+                <option value="Painting">Painting</option>
+                <option value="Photography">Photography</option>
+                <option value="Writing">Writing</option>
+              </select>
+              </div>
+              </div>
+              </div>
+              <button className="btn btn-grad btn-edit" type="submit">Submit</button>
+            </form>
+          </div>
+          </div>
       </div>
     )
   }

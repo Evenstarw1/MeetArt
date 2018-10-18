@@ -12,7 +12,8 @@ import Profile from './components/contents/Profile';
 import Meetings from './components/contents/Meetings/Meetings';
 import CreateMeeting from './components/contents/Meetings/CreateMeeting';
 import UploadItem from './components/contents/Gallery/UploadItem';
-import EditProfile from './components/contents/EditProfile'
+import Item from './components/contents/Gallery/showItem';
+
 
 class App extends Component {
 
@@ -70,6 +71,8 @@ class App extends Component {
             <CreateMeeting/> } />
             <Route exact path='/submitart' render={() => 
             <UploadItem/> } />
+            <Route exact path='/item/:id' render={() => 
+            <Item/> } />
             </Switch>
           </div>
 
