@@ -11,11 +11,13 @@ import './profile.css';
 
 class Profile extends Component {
 
+
+
   render() {
       return (
         <div>
           <User/>
-          <EditProfile user= {this.props.userInSession} />
+          <EditProfile id="edit" user= {this.props.userInSession} />
           <hr/>
           <h3>Art Gallery</h3>
           <button className="btn btn-grad btn-submit"><Link to='/submitart'>Submit Art <img className="img-button" src="https://res.cloudinary.com/dqesvgqq9/image/upload/v1539856293/MeetArt/upload_item.png" alt=""></img></Link></button>
