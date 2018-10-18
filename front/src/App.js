@@ -77,7 +77,6 @@ class App extends Component {
             <Route exact path='/item/:id' component={Item} />
             </Switch>
           </div>
-
         </div>
       );
     } else {
