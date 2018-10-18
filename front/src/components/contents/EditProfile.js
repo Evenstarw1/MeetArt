@@ -53,12 +53,13 @@ export default class EditProfile extends React.Component {
 
     render() {
         let { user } = this.state;
+        let displayEdit = this.props.displayEdit ? 'block' : 'none';
         return (
-            <div>
+            <div style={{display: displayEdit}}>
                 <hr />
                 <h1>Edit your Profile</h1>
                 <p>Your information will appear on your public profile.</p>
-                <form onSubmit={this.handleFormSubmit}>
+                <form onSubmit={this.handleFormSubmit} >
                     <label>Username:</label>
                     <input type="text" name="username" value={user.username} onChange={e => this.handleChangeProf(e, "username")} />
                     <label>Description:</label>

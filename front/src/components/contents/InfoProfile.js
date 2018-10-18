@@ -22,13 +22,7 @@ export default class User extends Component {
         this.getAllInfo();
     }
 
-    toggle_visibility = (id) => {
-        let e = document.getElementById(id);
-        if(e.style.display === 'block')
-           e.style.display = 'none';
-        else
-           e.style.display = 'block';
-    }
+    
 
 
     render() {
@@ -52,7 +46,7 @@ export default class User extends Component {
                     <p>{user.role}</p>
                 </div>     
                 </div>
-                <button onclick="toggle_visibility('edit')" className="btn btn-grad btn-edit">Edit your profile<img className="img-button-pencil" src="https://res.cloudinary.com/dqesvgqq9/image/upload/v1539856293/MeetArt/pencil.png" alt=""></img></button>
+                <button onClick={(e) => this.props.toggle_visibility(e)} className="btn btn-grad btn-edit">Edit your profile<img className="img-button-pencil" src="https://res.cloudinary.com/dqesvgqq9/image/upload/v1539856293/MeetArt/pencil.png" alt=""></img></button>
                 </div> 
                 </div>   
             </div>
