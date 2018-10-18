@@ -18,7 +18,7 @@ class Profile extends Component {
           <EditProfile user= {this.props.userInSession} />
           <hr/>
           <h3>Art Gallery</h3>
-          <button className="btn btn-grad btn-submit"><Link to='/submitart'>Submit Art <img className="img-button" src="/images/upload_item.png" alt=""></img></Link></button>
+          <button className="btn btn-grad btn-submit"><Link to='/submitart'>Submit Art <img className="img-button" src="https://res.cloudinary.com/dqesvgqq9/image/upload/v1539856293/MeetArt/upload_item.png" alt=""></img></Link></button>
           <div className="card-group gallery-group">
           <Gallery/>
           </div>

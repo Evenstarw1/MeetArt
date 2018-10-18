@@ -13,7 +13,7 @@ import Meetings from './components/contents/Meetings/Meetings';
 import CreateMeeting from './components/contents/Meetings/CreateMeeting';
 import UploadItem from './components/contents/Gallery/UploadItem';
 import Item from './components/contents/Gallery/showItem';
-
+import Home from './components/contents/Home';
 
 class App extends Component {
 
@@ -62,7 +62,10 @@ class App extends Component {
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
           </header>
           <div>
+           
             <Switch>
+            <Route exact path='/' render={() => 
+            <Home/>}/>
             <Route exact path='/profile' render={() => 
             <Profile userInSession={this.state.loggedInUser}/>}/>
             <Route exact path='/meetings' render={() => 
@@ -71,8 +74,7 @@ class App extends Component {
             <CreateMeeting/> } />
             <Route exact path='/submitart' render={() => 
             <UploadItem/> } />
-            <Route exact path='/item/:id' render={() => 
-            <Item/> } />
+            <Route exact path='/item/:id' component={Item} />
             </Switch>
           </div>
 
@@ -84,6 +86,8 @@ class App extends Component {
           <header className="">
             <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
             <Switch>
+            <Route exact path='/' render={() => 
+            <Home/>}/>
               <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
               <Route exact path='/login' render={() => <Login getUser={this.getTheUser}/>}/>
             </Switch>

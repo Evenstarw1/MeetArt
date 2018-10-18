@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import './gallery.css'
 
 export default class Gallery extends Component {
@@ -35,7 +36,7 @@ export default class Gallery extends Component {
                             </div>
                                 <h5 className="card-title">{items.name}</h5>
                                 <p className="card-text">{items.description} </p>
-                                <button href="#" className="btn btn-grad">Visit</button>
+                                <button className="btn btn-grad"><Link to={'/item/'+ items._id}>Visit</Link></button>
                             </div>
                         </div>
                     </div> 

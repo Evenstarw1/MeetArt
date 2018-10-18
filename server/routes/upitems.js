@@ -11,6 +11,13 @@ router.get('/', (req, res, next) => {
     .catch(err => next(err));
 })
 
+router.get('/:id', (req, res, next) => {
+    return Item.findById(req.params.id)
+    .then(data => {/* console.log(data); */
+    return res.status(200).json(data)})
+    .catch(err => next(err));
+})
+
 //CREATE NEW ITEM
 router.post('/', uploadCloud.single('item'), (req, res, next) => {
     console.log("New item");

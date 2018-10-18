@@ -1,6 +1,6 @@
 // auth/Signup.js
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import AuthService from './AuthService'
 import '../css/Auth.css';
 
@@ -21,7 +21,8 @@ class Login extends Component {
         this.setState({
           username: username,
           password: password,
-          error: false
+          error: false,
+          redirect: true,
         });
 
         this.props.getUser(response)
@@ -41,7 +42,7 @@ class Login extends Component {
   }
 
   render() {
-
+    if(this.state.redirect) return <Redirect to="/profile"></Redirect>
     return (<div>
       <h3>Please, login to our site</h3>
       <form className="px-4 py-3 loginBox" onSubmit={this.handleFormSubmit}>

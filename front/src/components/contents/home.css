@@ -1,0 +1,24 @@
+.body-home {
+    background-image: url("https://res.cloudinary.com/dqesvgqq9/image/upload/v1539858634/home-meetart.png");  
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.body-box{
+    height: 700px;
+}
+
+.box-text{
+    width: 40%;
+    padding: 50px 30px;
+}
+
+h3 {
+    font-size: 40px;
+    background: -webkit-linear-gradient(#f15f79, #b24592);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    padding: 0 40px;
+  }
