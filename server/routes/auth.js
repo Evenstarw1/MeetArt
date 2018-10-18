@@ -26,7 +26,7 @@ const login = (req, user) => {
 router.post('/signup', (req, res, next) => {
 
   const {username, password, email} = req.body;
-
+  
   // Check for non empty user or password
   if (!username || !password || !email){
     next(new Error('You must provide valid credentials'));
@@ -36,11 +36,11 @@ router.post('/signup', (req, res, next) => {
   .then( foundUser => {
     if (foundUser) throw new Error('Username already exists');
     
-
-
+    
+    
     const salt     = bcrypt.genSaltSync(10);
     const hashPass = bcrypt.hashSync(password, salt);
-
+    
     return new User({
       username,
       password: hashPass,

@@ -45,7 +45,7 @@ const simpleCrud = (Model, extensionFn) => {
     // CRUD: UPDATE
     router.post('/:id', uploadCloud.single('image'),(req,res,next) => {
         
-        console.log(req.file);
+        console.log('===========EDIT',req.file);
         const {id} = req.params;
         const {username,description,location,gender,role} = req.body;
         const image = req.file.secure_url;
