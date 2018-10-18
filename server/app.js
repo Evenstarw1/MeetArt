@@ -99,5 +99,4 @@ app.use('/api/meetings', genericCrud(require('./models/Meetings')));
 app.use('/api/item', upitems);
 
 
-
 module.exports = app;

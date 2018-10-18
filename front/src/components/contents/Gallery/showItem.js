@@ -33,9 +33,12 @@ export default class Item extends Component {
                 <div key={item._id}>
                     <img className="img-item" src={item.image} alt={item.name} />
                 <div className="box-info-item">
-                    <h5>{item.title}</h5>
-                    <p>{item.description}</p>
-                    <p>{item.category} </p>
+                <div className="box-align">
+                    <h4>{item.title}</h4>
+                    <p className="text-type">By: {item.username}</p>
+                    <p className="text-type">{item.category} </p>
+                    <p className="text-description">{item.description}</p>
+                </div>
                 </div>
                 </div>     
                 </div>

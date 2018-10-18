@@ -8,7 +8,7 @@ const MyMapComponent = compose(
     googleMapURL:
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyCkhuP8ROCRjv9n-f_LuZtylrTZY2yJTP0",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: <div style={{ height: `600px` }} />,
     mapElement: <div style={{ height: `100%` }} />
   }),
   withScriptjs,

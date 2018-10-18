@@ -27,6 +27,7 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <img className="logo-nav" src="https://res.cloudinary.com/dqesvgqq9/image/upload/v1539856293/MeetArt/meetart_logo.png" alt=""/>            <div className="nav-link-direction">
               <ul className="navbar-nav mr-auto">
+                <li className="nav-item active li-white"><Link className="nav-link-white" to='/'>Home</Link></li>
                 <li className="nav-item active li-white"><Link className="nav-link-white" to='/profile'>Profile</Link></li>
                 <li className="nav-item active li-white"><Link className="nav-link-white" to='/meetings'>Meetings</Link></li>
                 <li className=""><button className="btn-navbar btn-grad-navbar" onClick={this.handleLogout}>Logout</button></li>

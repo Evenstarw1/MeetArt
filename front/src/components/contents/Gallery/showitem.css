@@ -12,7 +12,27 @@
     margin: 30px 100px;
     box-shadow: 3px 3px 6px rgb(182, 181, 181);
     padding: 25px 60px;
-    flex-direction: column;
     display: flex;
-    flex-wrap: wrap;
+}
+.box-align {
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: left;
+}
+
+h4 {
+    font-size: 36px;
+    background: -webkit-linear-gradient(#f15f79, #b24592);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    font-weight: bold;
+}
+
+.text-description {
+    font-size: 26px;
+}
+
+
+.text-type {
+    font-size: 12px;
 }
