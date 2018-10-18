@@ -9,7 +9,7 @@ export default class User extends Component {
     }
 
     getAllInfo = () => {
-        axios.get(`http://localhost:3010/api/user/profile`, { withCredentials: true })
+        axios.get(`${process.env.REACT_APP_API_URL}/api/user/profile`, { withCredentials: true })
             .then(responseFromApi => {
                 console.log(responseFromApi);
                 this.setState({

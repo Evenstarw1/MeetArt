@@ -9,7 +9,7 @@ export default class Item extends Component {
     }
 
     getAllInfo = () => {
-        axios.get(`http://localhost:3010/api/item/${this.state.id}` )
+        axios.get(`${process.env.REACT_APP_API_URL}/api/item/${this.state.id}` )
             .then(responseFromApi => {
                 console.log(responseFromApi);
                 this.setState({

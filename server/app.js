@@ -98,5 +98,10 @@ app.use('/api/user', genericCrud(require('./models/User')));
 app.use('/api/meetings', genericCrud(require('./models/Meetings')));
 app.use('/api/item', upitems);
 
+app.use((req, res, next) => {
+  // If no routes match, send them the React HTML.
+   res.sendFile(__dirname + "/public/index.html");
+  });
+
 
 module.exports = app;

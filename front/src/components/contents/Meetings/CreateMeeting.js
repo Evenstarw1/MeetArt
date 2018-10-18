@@ -23,7 +23,7 @@ export default class CreateMeetings extends React.Component {
     data['lat'] = this.state.lat;
     data['lng'] = this.state.lng;
     event.preventDefault();
-    axios.post(`http://localhost:3010/api/meetings/`, { data })
+    axios.post(`${process.env.REACT_APP_API_URL}/api/meetings/`, { data })
       .then(res => {
         console.log(res)
         this.setState({ redirect: true })

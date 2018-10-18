@@ -13,7 +13,7 @@ class Meetings extends Component {
     }
 
     getAllMeetings = () => {
-        axios.get(`http://localhost:3010/api/meetings/`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/meetings/`)
             .then(responseFromApi => {
                 console.log(responseFromApi)
                 this.setState({

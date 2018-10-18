@@ -10,7 +10,7 @@ export default class Gallery extends Component {
     }
 
     getAllItems = () => {
-        axios.get(`http://localhost:3010/api/item`, { withCredentials: true })
+        axios.get(`${process.env.REACT_APP_API_URL}/api/item`, { withCredentials: true })
             .then(responseFromApi => {
                 this.setState({
                     listOfItems: responseFromApi.data
