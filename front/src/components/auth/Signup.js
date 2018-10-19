@@ -1,6 +1,7 @@
 // auth/Signup.js
 import React, { Component } from 'react';
-import AuthService from './AuthService'
+import AuthService from './AuthService';
+import './Auth.css'
 
 class Signup extends Component {
   constructor(props){
@@ -37,27 +38,36 @@ class Signup extends Component {
   render() {
     return(
       <div>
-        <h3>Welcome!, create your account next:</h3>
-
-        <form onSubmit={this.handleFormSubmit}>
+        <h3>Welcome to MeetArt!</h3>
+        <h3>Please, complete the form to be a member</h3>
+        <hr/>
+        <div ClassName="box-auth">
+        <div className="box-display">
+      <div className="box-container">
+        <form className="loginBox" onSubmit={this.handleFormSubmit}>
+        <div className="form-group">
           <fieldset>
-            <label>Username:</label>
-            <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
+            <label className="label label-text">Username:</label>
+            <input className="form-control" type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
           </fieldset>
-          
+          </div>
+          <div className="form-group">
           <fieldset>
-            <label>Password:</label>
-            <input type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
+            <label className="label label-text">Password:</label>
+            <input className="form-control" type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           </fieldset>
-
+          </div>
+          <div className="form-group">
           <fieldset>
-            <label>Email:</label>
-            <input type="email" name="email" value={this.state.email} onChange={ e => this.handleChange(e)} />
+            <label className="label label-text">Email:</label>
+            <input className="form-control" type="email" name="email" value={this.state.email} onChange={ e => this.handleChange(e)} />
           </fieldset>
-          
-          <input type="submit" value="Sign up" />
+          </div>
+          <input className="btn btn-grad" type="submit" value="Sign up" />
         </form>
-
+        </div>
+        </div>
+</div>
       </div>
     )
   }

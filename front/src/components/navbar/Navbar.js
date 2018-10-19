@@ -44,6 +44,7 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <img className="logo-nav" src="https://res.cloudinary.com/dqesvgqq9/image/upload/v1539856293/MeetArt/meetart_logo.png" alt=""/>
               <ul className="navbar-nav mr-auto">
+              <li className="nav-item active li-white"><Link className="nav-link-white" to='/'>Home</Link></li>
                 <li className="nav-item active"><Link className="nav-link-white" to='/signup'>Signup</Link></li>
                 <li className="nav-item active"><Link className="nav-link-white" to='/login'>Login</Link></li>
               </ul>

@@ -50,13 +50,14 @@ export default class UploadItem extends Component {
                     </div>
                     <div className="field">
                         <label className="label label-text">Description</label>
-                        <input classsName="input" type="text" name='description' placeholder='Description' value={description} onChange={(e) => this.setState({ description: e.target.value })} />
+                        <input className="textarea" type="text" name='description' placeholder='Description' value={description} onChange={(e) => this.setState({ description: e.target.value })} />
                     </div>
                     <div className="field">
                         <label className="label label-text">Category:</label>
                         <div class="control is-center">
                             <div class="select">
                                 <select name="category" value={category} onChange={(e) => this.setState({ category: e.target.value })}>
+                                <option value="-">-</option>
                                     <option value="Traditional Art">Traditional Art</option>
                                     <option value="Digital Art">Digital Art</option>
                                     <option value="Photography">Photography</option>
