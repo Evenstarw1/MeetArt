@@ -39,7 +39,7 @@ h5 {
 
 .each-meeting{
     border: 5px solid transparent;
-    border-image: linear-gradient(to bottom right, #f15f79 0%, #b24592 25%, #f15f79 50%, #b24592 75%, #fd1892 100%);
+    border-image: linear-gradient(to bottom right, #fa7d94 0%, #b24592 25%, #fa7d94 50%, #b24592 75%, #be126e 100%);
     border-image-slice: 1;
     margin: 20px auto;
     width: 400px;

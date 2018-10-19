@@ -17,6 +17,11 @@ class Navbar extends Component {
 
   handleLogout = (e) => {
     this.props.logout()
+    .then(res => {
+      console.log(res)
+      this.setState({ redirect: true })
+    })
+    .catch(e => console.log("Error", e))
   }
 
   render() {
@@ -25,12 +30,13 @@ class Navbar extends Component {
         <div>
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <img className="logo-nav" src="https://res.cloudinary.com/dqesvgqq9/image/upload/v1539856293/MeetArt/meetart_logo.png" alt=""/>            <div className="nav-link-direction">
+            <img className="logo-nav" src="https://res.cloudinary.com/dqesvgqq9/image/upload/v1539856293/MeetArt/meetart_logo.png" alt=""/>            
+            <div className="nav-link-direction">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active li-white"><Link className="nav-link-white" to='/'>Home</Link></li>
                 <li className="nav-item active li-white"><Link className="nav-link-white" to='/profile'>Profile</Link></li>
                 <li className="nav-item active li-white"><Link className="nav-link-white" to='/meetings'>Meetings</Link></li>
-                <li className=""><button className="btn-navbar btn-grad-navbar" onClick={this.handleLogout}>Logout</button></li>
+                <li className="nav-item active"><button className="btn-navbar btn-grad-navbar" onClick={this.handleLogout}>Logout</button></li>
               </ul>
               </div>
               </div>
@@ -46,7 +52,7 @@ class Navbar extends Component {
               <ul className="navbar-nav mr-auto">
               <li className="nav-item active li-white"><Link className="nav-link-white" to='/'>Home</Link></li>
                 <li className="nav-item active"><Link className="nav-link-white" to='/signup'>Signup</Link></li>
-                <li className="nav-item active"><Link className="nav-link-white" to='/login'>Login</Link></li>
+                <li className="nav-item active"><button className="btn-navbar btn-grad-navbar"><Link to='/login'>Login</Link></button></li>
               </ul>
               </div>
           </nav>   
