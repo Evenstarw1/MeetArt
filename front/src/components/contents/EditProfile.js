@@ -9,8 +9,9 @@ export default class EditProfile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: {}
-        }
+            user: {},
+            redirect: false
+            }
         this.service = new UpItem();
     }
 
@@ -37,10 +38,10 @@ export default class EditProfile extends React.Component {
             },
             withCredentials: true
         })
-            .then(res => {
-                console.log(res)
-                return <Redirect to="/Profile"></Redirect>
-            })
+        .then(res => {
+            console.log(res)
+            this.setState({ redirect: true })
+          })
             .catch(e => console.log("Error", e))
     }
 
@@ -55,6 +56,8 @@ export default class EditProfile extends React.Component {
     render() {
         let { user } = this.state;
         let displayEdit = this.props.displayEdit ? 'block' : 'none';
+        if (this.state.redirect) return <Redirect to='/profile' />
+
         return (
             <div style={{display: displayEdit}}>
                 <hr />

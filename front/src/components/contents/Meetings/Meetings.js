@@ -3,7 +3,7 @@ import Map from '../Map/map.js';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './meetings.css';
-
+import moment from 'moment';
 
 
 class Meetings extends Component {
@@ -56,7 +56,7 @@ class Meetings extends Component {
                                     <div className="each-meeting" key={meeting._id}>
                                         <h6>{meeting.name}</h6>
                                         <p><b>Where?</b> {meeting.place}</p>
-                                        <p><b>When?</b> {meeting.date} at {meeting.time}h</p>
+                                        <p><b>When?</b> {moment(meeting.date).format("DD-MM-YYYY")} at {meeting.time}h</p>
                                         <p>{meeting.description} </p>
                                     </div>
                                 )

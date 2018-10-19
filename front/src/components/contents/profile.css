@@ -86,3 +86,10 @@ h6 {
     font-weight: bold;
     font-size: 18px;
 }
+
+.button-edit-profile {
+    margin-top: -40px;
+    margin-left: 500px;
+    display: flex;
+    flex-direction: row;
+}

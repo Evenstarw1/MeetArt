@@ -31,11 +31,10 @@ export default class Gallery extends Component {
                     <div className="card card-style">
                     <div key={index}>
                             <div key={items._id}>
-                            <div className="">
+                            <div className="item-image">
                                 <img className="card-img-top card-img-height" src={items.image} alt={items.name}/>
                             </div>
-                                <h5 className="card-title">{items.name}</h5>
-                                <p className="card-text">{items.description} </p>
+                                <h5 className="card-title">{items.title}</h5>
                                 <button className="btn btn-grad"><Link to={'/item/'+ items._id}>Visit</Link></button>
                             </div>
                         </div>

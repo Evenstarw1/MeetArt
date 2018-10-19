@@ -12,7 +12,7 @@ class Home extends Component {
                 <h3>Share your art and meet other artists!!</h3>
                 </div>
             </div>
-           
+          
             </body>
       )
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import UpItem from './UpItem'
 import './gallery.css';
+import { Redirect } from "react-router-dom";
 
 export default class UploadItem extends Component {
     constructor() {
@@ -10,14 +11,15 @@ export default class UploadItem extends Component {
             description: '',
             category: '',
             image: null,
-            error: ''
+            error: '',
+            redirect: false,
         }
         this.service = new UpItem();
     }
 
     handleChange(e) {
         this.setState({
-            image: e.target.files[0]
+            image: e.target.files[0],
         })
     }
 
@@ -26,10 +28,16 @@ export default class UploadItem extends Component {
         let { title, description, category } = this.state;
 
         this.service.addPicture(this.state.image, title, description, category)
+        .then(res => {
+            console.log(res)
+            this.setState({ redirect: true })
+          })
+          .catch(e => console.log("Error", e))
     }
 
     render() {
         let { title, description, category, error } = this.state;
+        if (this.state.redirect) return <Redirect to='/profile' />
         return (
             <div className="form-box-upload">
                 <h3>Upload your Art here</h3>
@@ -73,6 +81,7 @@ export default class UploadItem extends Component {
 
                     <button className="btn btn-grad" onClick={(e) => this.handleSubmit(e)}>Submit</button>
                 </form>
+
             </div>
             </div>
         )

@@ -46,7 +46,9 @@ export default class User extends Component {
                     <p>{user.role}</p>
                 </div>     
                 </div>
+                <div className="button-edit-profile">
                 <button onClick={(e) => this.props.toggle_visibility(e)} className="btn btn-grad btn-edit">Edit your profile<img className="img-button-pencil" src="https://res.cloudinary.com/dqesvgqq9/image/upload/v1539856293/MeetArt/pencil.png" alt=""></img></button>
+                </div>
                 </div> 
                 </div>   
             </div>

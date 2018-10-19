@@ -12,6 +12,7 @@
     "bulma": "^0.7.2",
     "google-maps-react": "^2.0.2",
     "jquery": "^1.9.1",
+    "moment": "^2.22.2",
     "popper.js": "^1.14.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
