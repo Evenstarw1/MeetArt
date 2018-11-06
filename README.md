@@ -1,6 +1,4 @@
 # MeetArt
-
-<img src="https://res.cloudinary.com/dqesvgqq9/image/upload/v1539891992/MeetArt/1539891992057.png"/>
 Gallery Art &amp; Meets App
 
 This is my third project for IronHack Bootcamp.
